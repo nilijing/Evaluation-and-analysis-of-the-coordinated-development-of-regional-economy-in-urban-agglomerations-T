@@ -1,0 +1,352 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf100
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset134 PingFangSC-Regular;\f2\fmodern\fcharset0 Courier;
+\f3\fnil\fcharset0 HelveticaNeue;\f4\fnil\fcharset0 Menlo-Bold;\f5\fnil\fcharset0 Menlo-Italic;
+\f6\fnil\fcharset134 .PingFangSC-Regular;\f7\fnil\fcharset0 Tahoma;}
+{\colortbl;\red255\green255\blue255;\red20\green20\blue20;\red244\green244\blue244;\red255\green255\blue255;
+\red178\green178\blue178;\red135\green135\blue135;\red12\green107\blue255;\red234\green40\blue46;\red52\green52\blue52;
+}
+{\*\expandedcolortbl;;\cssrgb\c10196\c10196\c10196;\cssrgb\c96471\c96471\c96471;\cssrgb\c100000\c100000\c100000;
+\cssrgb\c74902\c74902\c74902;\cssrgb\c60000\c60000\c60000;\cssrgb\c0\c51765\c100000;\cssrgb\c94510\c25098\c23529;\cssrgb\c26667\c26667\c26667;
+}
+\margl1440\margr1440\vieww11620\viewh14220\viewkind0
+\deftab720
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
+function y=guiyi(x,type,ymin,ymax)\
+%
+\f1 \'ca\'b5\'cf\'d6\'d5\'fd\'cf\'f2\'bb\'f2\'b8\'ba\'cf\'f2\'d6\'b8\'b1\'ea\'b9\'e9\'d2\'bb\'bb\'af\'a3\'ac\'b7\'b5\'bb\'d8\'b9\'e9\'d2\'bb\'bb\'af\'ba\'f3\'b5\'c4\'ca\'fd\'be\'dd\'be\'d8\'d5\'f3
+\f0 \
+%x
+\f1 \'ce\'aa\'d4\'ad\'ca\'bc\'ca\'fd\'be\'dd\'be\'d8\'d5\'f3
+\f0 , 
+\f1 \'d2\'bb\'d0\'d0\'b4\'fa\'b1\'ed\'d2\'bb\'b8\'f6\'d1\'f9\'b1\'be
+\f0 , 
+\f1 \'c3\'bf\'c1\'d0\'b6\'d4\'d3\'a6\'d2\'bb\'b8\'f6\'d6\'b8\'b1\'ea
+\f0 \
+%type
+\f1 \'c9\'e8\'b6\'a8\'d5\'fd\'cf\'f2\'d6\'b8\'b1\'ea
+\f0 1,
+\f1 \'b8\'ba\'cf\'f2\'d6\'b8\'b1\'ea
+\f0 2\
+%ymin,ymax
+\f1 \'ce\'aa\'b9\'e9\'d2\'bb\'bb\'af\'b5\'c4\'c7\'f8\'bc\'e4\'b6\'cb\'b5\'e3
+\f0 \
+[n,m]=size(x);\
+y=zeros(n,m);\
+xmin=min(x);\
+xmax=max(x);\
+switch type\
+    case 1\
+        for j=1:m\
+            y(:,j)=(ymax-ymin)*(x(:,j)-xmin(j))/(xmax(j)-xmin(j))+ymin;\
+        end\
+    case 2\
+        for j=1:m\
+            y(:,j)=(ymax-ymin)*(xmax(j)-x(:,j))/(xmax(j)-xmin(j))+ymin;\
+        end\
+end
+\f2 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f3 \cf2 \cb4 \
+\
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f4\b \cf2 \cb3 function
+\f0\b0 \cf5  \cf2 [s,w]=
+\f3 \cb4 shang
+\f0 \cb3 (x,ind)\cf5 \
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f5\i \cf6 %
+\f1\i0 \'ca\'b5\'cf\'d6\'d3\'c3\'ec\'d8\'d6\'b5\'b7\'a8\'c7\'f3\'b8\'f7\'d6\'b8\'b1\'ea
+\f5\i (
+\f1\i0 \'c1\'d0\'a3\'a9\'b5\'c4\'c8\'a8\'d6\'d8\'bc\'b0\'b8\'f7\'ca\'fd\'be\'dd\'d0\'d0\'b5\'c4\'b5\'c3\'b7\'d6
+\f0 \cf2 \
+
+\f5\i \cf6 %x
+\f1\i0 \'ce\'aa\'d4\'ad\'ca\'bc\'ca\'fd\'be\'dd\'be\'d8\'d5\'f3
+\f5\i , 
+\f1\i0 \'d2\'bb\'d0\'d0\'b4\'fa\'b1\'ed\'d2\'bb\'b8\'f6\'d1\'f9\'b1\'be
+\f5\i , 
+\f1\i0 \'c3\'bf\'c1\'d0\'b6\'d4\'d3\'a6\'d2\'bb\'b8\'f6\'d6\'b8\'b1\'ea
+\f0 \cf2 \
+
+\f5\i \cf6 %ind
+\f1\i0 \'d6\'b8\'ca\'be\'cf\'f2\'c1\'bf\'a3\'ac\'d6\'b8\'ca\'be\'b8\'f7\'c1\'d0\'d5\'fd\'cf\'f2\'d6\'b8\'b1\'ea\'bb\'b9\'ca\'c7\'b8\'ba\'cf\'f2\'d6\'b8\'b1\'ea\'a3\'ac
+\f5\i 1
+\f1\i0 \'b1\'ed\'ca\'be\'d5\'fd\'cf\'f2\'d6\'b8\'b1\'ea\'a3\'ac
+\f5\i 2
+\f1\i0 \'b1\'ed\'ca\'be\'b8\'ba\'cf\'f2\'d6\'b8\'b1\'ea
+\f0 \cf2 \
+
+\f5\i \cf6 %s
+\f1\i0 \'b7\'b5\'bb\'d8\'b8\'f7\'d0\'d0\'a3\'a8\'d1\'f9\'b1\'be\'a3\'a9\'b5\'c3\'b7\'d6\'a3\'ac
+\f5\i w
+\f1\i0 \'b7\'b5\'bb\'d8\'b8\'f7\'c1\'d0\'c8\'a8\'d6\'d8
+\f0 \cf2 \
+[n,m]=\cf7 size\cf2 (x); 
+\f5\i \cf6 % n
+\f1\i0 \'b8\'f6\'d1\'f9\'b1\'be
+\f5\i , m
+\f1\i0 \'b8\'f6\'d6\'b8\'b1\'ea
+\f0 \cf2 \
+
+\f5\i \cf6 %%
+\f1\i0 \'ca\'fd\'be\'dd\'b5\'c4\'b9\'e9\'d2\'bb\'bb\'af\'b4\'a6\'c0\'ed
+\f0 \cf2 \
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f4\b \cf2 for
+\f0\b0  \cf7 i\cf2 =\cf7 1\cf2 :m\
+    
+\f4\b if
+\f0\b0  ind(\cf7 i\cf2 )
+\f4\b ==
+\f0\b0 \cf7 1\cf2  
+\f5\i \cf6 %
+\f1\i0 \'d5\'fd\'cf\'f2\'d6\'b8\'b1\'ea\'b9\'e9\'d2\'bb\'bb\'af
+\f0 \cf2 \
+        X(:,\cf7 i\cf2 )=guiyi(x(:,\cf7 i\cf2 ),\cf7 1\cf2 ,\cf7 0.002\cf2 ,\cf7 0.996\cf2 );    
+\f5\i \cf6 %
+\f1\i0 \'c8\'f4\'b9\'e9\'d2\'bb\'bb\'af\'b5\'bd
+\f5\i [0,1], 0
+\f1\i0 \'bb\'e1\'b3\'f6\'ce\'ca\'cc\'e2
+\f0 \cf2 \
+    
+\f4\b else
+\f0\b0  
+\f5\i \cf6 %
+\f1\i0 \'b8\'ba\'cf\'f2\'d6\'b8\'b1\'ea\'b9\'e9\'d2\'bb\'bb\'af
+\f0 \cf2 \
+        X(:,\cf7 i\cf2 )=guiyi(x(:,\cf7 i\cf2 ),\cf7 2\cf2 ,\cf7 0.002\cf2 ,\cf7 0.996\cf2 );\
+    
+\f4\b end
+\f0\b0 \
+
+\f4\b end
+\f0\b0 \
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f5\i \cf6 %%
+\f1\i0 \'bc\'c6\'cb\'e3\'b5\'da
+\f5\i j
+\f1\i0 \'b8\'f6\'d6\'b8\'b1\'ea\'cf\'c2\'a3\'ac\'b5\'da
+\f5\i i
+\f1\i0 \'b8\'f6\'d1\'f9\'b1\'be\'d5\'bc\'b8\'c3\'d6\'b8\'b1\'ea\'b5\'c4\'b1\'c8\'d6\'d8
+\f5\i p(i,j)
+\f0\i0 \cf2 \
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f4\b \cf2 for
+\f0\b0  \cf7 i\cf2 =\cf7 1\cf2 :n\
+    
+\f4\b for
+\f0\b0  \cf7 j\cf2 =\cf7 1\cf2 :m\
+        p(\cf7 i\cf2 ,\cf7 j\cf2 )=X(\cf7 i\cf2 ,\cf7 j\cf2 )
+\f4\b /
+\f0\b0 sum(X(:,\cf7 j\cf2 ));\
+    
+\f4\b end
+\f0\b0 \
+
+\f4\b end
+\f0\b0 \
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f5\i \cf6 %%
+\f1\i0 \'bc\'c6\'cb\'e3\'b5\'da
+\f5\i j
+\f1\i0 \'b8\'f6\'d6\'b8\'b1\'ea\'b5\'c4\'ec\'d8\'d6\'b5
+\f5\i e(j)
+\f0\i0 \cf2 \
+k=\cf7 1
+\f4\b \cf2 /
+\f0\b0 \cf7 log\cf2 (n);\
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f4\b \cf2 for
+\f0\b0  \cf7 j\cf2 =\cf7 1\cf2 :m\
+    e(\cf7 j\cf2 )=
+\f4\b -
+\f0\b0 k
+\f4\b *
+\f0\b0 sum(p(:,\cf7 j\cf2 )
+\f4\b .*
+\f0\b0 \cf7 log\cf2 (p(:,\cf7 j\cf2 )));\
+
+\f4\b end
+\f0\b0 \
+d=\cf7 ones\cf2 (\cf7 1\cf2 ,m)
+\f4\b -
+\f0\b0 e; 
+\f5\i \cf6 %
+\f1\i0 \'bc\'c6\'cb\'e3\'d0\'c5\'cf\'a2\'ec\'d8\'c8\'df\'d3\'e0\'b6\'c8
+\f0 \cf2 \
+w=d
+\f4\b ./
+\f0\b0 sum(d); 
+\f5\i \cf6 %
+\f1\i0 \'c7\'f3\'c8\'a8\'d6\'b5
+\f5\i w
+\f0\i0 \cf2 \
+s=\cf7 100
+\f4\b \cf2 *
+\f0\b0 w
+\f4\b *
+\f0\b0 X\cf8 '; %
+\f1 \'c7\'f3\'d7\'db\'ba\'cf\'b5\'c3\'b7\'d6\
+\
+\pard\pardeftab720\sl300\sa336\partightenfactor0
+
+\f6 \cf2 \cb4 \'b3\'cc\'d0\'f2\'b2\'e2\'ca\'d4\'a3\'ac\'cf\'d6\'d3\'d0\'ca\'fd\'be\'dd
+\f3 shang_datas.mat,  
+\f6 \'b0\'fc\'ba\'ac
+\f3 5
+\f6 \'b8\'f6\'d6\'b8\'b1\'ea\'a3\'ba\'b5\'da
+\f3 5
+\f6 \'b8\'f6\'d6\'b8\'b1\'ea\'ce\'aa\'b8\'ba\'cf\'f2\'d6\'b8\'b1\'ea\'a1\'a3
+\f3 \
+load shang_datas\
+Ind=[1 1 1 1 2]; %
+\f6 \'d6\'b8\'b6\'a8\'b8\'f7\'d6\'b8\'b1\'ea\'b5\'c4\'d5\'fd\'cf\'f2
+\f3 or
+\f6 \'b8\'ba\'cf\'f2
+\f3 \
+[S,W]=shang(X,Ind)\
+\pard\pardeftab720\sl300\partightenfactor0
+\cf2 \cb1 \uc0\u8232 \cb4 \
+\pard\pardeftab720\sl300\sa336\partightenfactor0
+
+\f6 \cf2 \'d4\'cb\'d0\'d0\'bd\'e1\'b9\'fb\'a3\'ba
+\f3 \
+S =\
+Columns 1 through 9\
+3.2624 11.7822 5.2952 1.3521 2.5262 2.0425 4.4215 2.6953 2.5208\
+Columns 10 through 1\
+7.8834 4.7410 7.4679 1.4645 3.2541 1.6292 3.3035 1.6282 1.9043\
+Columns 19 through 27\
+2.0526 7.8582 0.7256 3.8943 3.7992 1.7187 0.7766 0.6445 2.0167\
+Columns 28 through 31\
+0.7801 1.3353 2.2775 2.9462234uy5\
+W = 0.0896 0.2195 0.3330 0.3073 0.0506\
+\
+\
+/Users/yijingtan/Documents/MATLAB/matlab_book1.mat\
+x=load matlab_sh_eg.mat
+\f1 \cf8 \cb3 \
+\pard\pardeftab720\sl280\partightenfactor0
+\cf8 x=load('/Users/yijingtan/Documents/MATLAB/nanjing.mat')\
+x=cell2mat(struct2cell(load('/Users/yijingtan/Documents/MATLAB/test.mat')));\
+xtype=class(x)\
+ind=[1 1 2 1 1 1 1 2 1 1 1 2 2 2 1 1];\
+[s,w]=shang(x,ind)\
+\
+\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f7\fs28 \cf9 \cb4 function [s,w]=shang(x)\
+% 
+\f1 \'ba\'af\'ca\'fd
+\f7 shang.m, 
+\f1 \'ca\'b5\'cf\'d6\'d3\'c3\'ec\'d8\'d6\'b5\'b7\'a8\'c7\'f3\'b8\'f7\'d6\'b8\'b1\'ea
+\f7 (
+\f1 \'c1\'d0\'a3\'a9\'b5\'c4\'c8\'a8\'d6\'d8\'bc\'b0\'b8\'f7\'ca\'fd\'be\'dd\'d0\'d0\'b5\'c4\'b5\'c3\'b7\'d6
+\f7 \
+% x
+\f1 \'ce\'aa\'d4\'ad\'ca\'bc\'ca\'fd\'be\'dd\'be\'d8\'d5\'f3
+\f7 , 
+\f1 \'d2\'bb\'d0\'d0\'b4\'fa\'b1\'ed\'d2\'bb\'b8\'f6\'b9\'fa\'bc\'d2
+\f7 , 
+\f1 \'c3\'bf\'c1\'d0\'b6\'d4\'d3\'a6\'d2\'bb\'b8\'f6\'d6\'b8\'b1\'ea
+\f7 \
+% s
+\f1 \'b7\'b5\'bb\'d8\'b8\'f7\'d0\'d0\'b5\'c3\'b7\'d6
+\f7 , w
+\f1 \'b7\'b5\'bb\'d8\'b8\'f7\'c1\'d0\'c8\'a8\'d6\'d8
+\f7 \
+[n,m]=size(x);     % n=23
+\f1 \'b8\'f6\'b9\'fa\'bc\'d2
+\f7 , m=5
+\f1 \'b8\'f6\'d6\'b8\'b1\'ea
+\f7 \
+%% 
+\f1 \'ca\'fd\'be\'dd\'b5\'c4\'b9\'e9\'d2\'bb\'bb\'af\'b4\'a6\'c0\'ed
+\f7 \
+% Matlab2010b,2011a,b
+\f1 \'b0\'e6\'b1\'be\'b6\'bc\'d3\'d0
+\f7 bug,
+\f1 \'d0\'e8\'c8\'e7\'cf\'c2\'b4\'a6\'c0\'ed
+\f7 . 
+\f1 \'c6\'e4\'cb\'fc\'b0\'e6\'b1\'be\'d6\'b1\'bd\'d3\'d3\'c3
+\f7 [X,ps]=mapminmax(x',0,1);
+\f1 \'bc\'b4\'bf\'c9
+\f7 \
+[X,ps]=mapminmax(x');\
+ps.ymin=0.002; % 
+\f1 \'b9\'e9\'d2\'bb\'bb\'af\'ba\'f3\'b5\'c4\'d7\'ee\'d0\'a1\'d6\'b5
+\f7 \
+ps.ymax=0.996; % 
+\f1 \'b9\'e9\'d2\'bb\'bb\'af\'ba\'f3\'b5\'c4\'d7\'ee\'b4\'f3\'d6\'b5
+\f7 \
+ps.yrange=ps.ymax-ps.ymin; % 
+\f1 \'b9\'e9\'d2\'bb\'bb\'af\'ba\'f3\'b5\'c4\'bc\'ab\'b2\'ee
+\f7 ,
+\f1 \'c8\'f4\'b2\'bb\'b5\'f7\'d5\'fb\'b8\'c3\'d6\'b5
+\f7 , 
+\f1 \'d4\'f2\'c4\'e6\'d4\'cb\'cb\'e3\'bb\'e1\'b3\'f6\'b4\'ed
+\f7 \
+X=mapminmax(x',ps);\
+% mapminmax('reverse',xx,ps); % 
+\f1 \'b7\'b4\'b9\'e9\'d2\'bb\'bb\'af
+\f7 , 
+\f1 \'bb\'d8\'b5\'bd\'d4\'ad\'ca\'fd\'be\'dd
+\f7 \
+X=X';\'a0\'a0% X
+\f1 \'ce\'aa\'b9\'e9\'d2\'bb\'bb\'af\'ba\'f3\'b5\'c4\'ca\'fd\'be\'dd
+\f7 , 23
+\f1 \'d0\'d0
+\f7 (
+\f1 \'b9\'fa\'bc\'d2
+\f7 ), 5
+\f1 \'c1\'d0
+\f7 (
+\f1 \'d6\'b8\'b1\'ea
+\f7 )\
+%% 
+\f1 \'bc\'c6\'cb\'e3\'b5\'da
+\f7 j
+\f1 \'b8\'f6\'d6\'b8\'b1\'ea\'cf\'c2\'a3\'ac\'b5\'da
+\f7 i
+\f1 \'b8\'f6\'bc\'c7\'c2\'bc\'d5\'bc\'b8\'c3\'d6\'b8\'b1\'ea\'b5\'c4\'b1\'c8\'d6\'d8
+\f7 p(i,j)\
+for i=1:n\
+\'a0 \'a0 for j=1:m\
+\'a0 \'a0\'a0 \'a0\'a0\'a0p(i,j)=X(i,j)/sum(X(:,j));\
+\'a0 \'a0 end\
+end\
+%% 
+\f1 \'bc\'c6\'cb\'e3\'b5\'da
+\f7 j
+\f1 \'b8\'f6\'d6\'b8\'b1\'ea\'b5\'c4\'ec\'d8\'d6\'b5
+\f7 e(j)\
+k=1/log(n);\
+for j=1:m\
+\'a0 \'a0 e(j)=-k*sum(p(:,j).*log(p(:,j)));\
+end\
+d=ones(1,m)-e;\'a0\'a0% 
+\f1 \'bc\'c6\'cb\'e3\'d0\'c5\'cf\'a2\'ec\'d8\'c8\'df\'d3\'e0\'b6\'c8
+\f7 \
+w=d./sum(d);\'a0 \'a0 % 
+\f1 \'c7\'f3\'c8\'a8\'d6\'b5
+\f7 w\
+s=w*p';\'a0 \'a0\'a0 \'a0\'a0 \'a0% 
+\f1 \'c7\'f3\'d7\'db\'ba\'cf\'b5\'c3\'b7\'d6
+\f7 [\\code]\
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f2\fs24 \cf2 \cb3 \
+\pard\pardeftab720\sl420\partightenfactor0
+\cf2 \
+}
